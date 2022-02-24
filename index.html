@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>js-array-carousel</title>
+</head>
+<body>
+    
+    <section id="app">
+        <div class="carousel">
+            <div class="slider-wrapper">
+                <div v-for="(slide , index) in slideObject" class="slide" :class="index == currentIndex ? 'active' : '' ">
+                    <img :src="slide.items" alt="">
+                    <div class="slide-text">{{ slide.text }}</div>
+                </div>
+                
+                
+
+
+            </div>
+
+            <div class="slider-list">
+               <div v-for="el in slideObject" class="element">
+                   <img :src="el.items" alt="">
+               </div>
+
+
+                
+                <div @click="next" class="next"><i class="far fa-arrow-alt-circle-up"></i></div>
+                <div @click="prev" class="prev"><i class="far fa-arrow-alt-circle-down"></i></div>
+            </div>
+
+            
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
