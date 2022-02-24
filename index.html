@@ -25,8 +25,8 @@
             </div>
 
             <div class="slider-list">
-               <div v-for="el in slideObject" class="element">
-                   <img :src="el.items" alt="">
+               <div v-for="(slide , index) in slideObject" class="element" @click="thumbClick(index)">
+                   <img :src="slide.items" alt="">
                </div>
 
 

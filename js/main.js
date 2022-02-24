@@ -175,5 +175,8 @@ const app = new Vue({
        prev(){
             this.currentIndex == this.slideObject.length-1 ? this.currentIndex = 0 : this.currentIndex++;
        },
+       thumbClick(i){
+            this.currentIndex = i;
+       },
     },
 })
