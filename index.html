@@ -12,20 +12,22 @@
 <body>
     
     <section id="app">
-        <div class="carousel">
+        <div class="carousel" @mouseover="stopAutoplay" @mouseleave="startAutoplay"> 
             <div class="slider-wrapper">
                 <div v-for="(slide , index) in slideObject" class="slide" :class="index == currentIndex ? 'active' : '' ">
                     <img :src="slide.items" alt="">
-                    <div class="slide-text">{{ slide.text }}</div>
+                    <div class="slide-text">
+                        <h2>{{ slide.title }}</h2>
+                        <p>{{ slide.text }}</p>
+                        
+                    </div>
                 </div>
                 
-                
-
-
             </div>
 
+            
             <div class="slider-list">
-               <div v-for="(slide , index) in slideObject" class="element" @click="thumbClick(index)">
+               <div v-for="(slide , index) in slideObject" class="element" :class="index == currentIndex ? 'active' : '' "  @click="thumbClick(index)">
                    <img :src="slide.items" alt="">
                </div>
 

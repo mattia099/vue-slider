@@ -165,8 +165,8 @@ const app = new Vue({
                 
             },
         ],
-
         currentIndex: 0,
+        clock : null,
     },
     methods:{
        next(){
@@ -178,5 +178,17 @@ const app = new Vue({
        thumbClick(i){
             this.currentIndex = i;
        },
+       stopAutoplay(){
+           console.log(' sei in hover ');
+           clearInterval( this.clock );
+       },
+       startAutoplay(){
+            console.log(' sei in leave ');
+            this.clock = setInterval( this.prev ,3000);
+       }
     },
+    mounted(){
+        console.log(' mounted ');
+        this.startAutoplay()
+    }
 })
